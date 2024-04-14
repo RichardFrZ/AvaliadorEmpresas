@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:id="@+id/check_container">
+
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa com lucro nos últimos 20 trimestres
+            (5 anos)"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_lucro20"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa com lucro nos últimos 40 trimestres
+            (10 anos)"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_lucro40"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa nunca deu prejuízo (ano fiscal)"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_prejuizo"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa apresentou crescimento de lucros nos últimos 5 anos"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_crescimento_lucro"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa apresentou crescimento de receita nos últimos 5 anos"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_crescimento_receita"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa possui ROE acima de 10%"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_ROE_acima"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Margem de lucro acima de 15%?"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_lucro_acima"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa possui liquidez diária acima de R$ 2M NAS ON'S"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_liquidez_acima"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa pagou +5% de dividendos/ano nos últimos 5 anos"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_dividendos"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:text="Empresa possui dívida menor que patrimônio"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/check_divida_menor"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/button_result"
+        android:text="Calcular"/>
+
+
+    <TextView
+        android:id="@+id/text_nota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Nota: -10"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
