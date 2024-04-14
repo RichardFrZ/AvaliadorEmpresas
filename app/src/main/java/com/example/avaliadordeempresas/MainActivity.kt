@@ -1,5 +1,6 @@
 package com.example.avaliadordeempresas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -16,107 +17,91 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.buttonResult.setOnClickListener {
+            val i = Intent(this, SplashScreenActivity::class.java)
+            i.putExtra("nota", nota)
+            startActivity(i)
+        }
+
         binding.checkLucro20.setOnClickListener {
-            if(binding.checkLucro20.isChecked()){
+            if (binding.checkLucro20.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkLucro40.setOnClickListener {
-            if(binding.checkLucro40.isChecked()){
+            if (binding.checkLucro40.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkPrejuizo.setOnClickListener {
-            if(binding.checkPrejuizo.isChecked()){
+            if (binding.checkPrejuizo.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkCrescimentoLucro.setOnClickListener {
-            if(binding.checkCrescimentoLucro.isChecked()){
+            if (binding.checkCrescimentoLucro.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkCrescimentoReceita.setOnClickListener {
-            if(binding.checkCrescimentoReceita.isChecked()){
+            if (binding.checkCrescimentoReceita.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkROEAcima.setOnClickListener {
-            if(binding.checkROEAcima.isChecked()){
+            if (binding.checkROEAcima.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkLucroAcima.setOnClickListener {
-            if(binding.checkLucroAcima.isChecked()){
+            if (binding.checkLucroAcima.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkLiquidezAcima.setOnClickListener {
-            if(binding.checkLiquidezAcima.isChecked()){
+            if (binding.checkLiquidezAcima.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkDividendos.setOnClickListener {
-            if(binding.checkDividendos.isChecked()){
+            if (binding.checkDividendos.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
 
         binding.checkDividaMenor.setOnClickListener {
-            if(binding.checkDividaMenor.isChecked()){
+            if (binding.checkDividaMenor.isChecked) {
                 nota += 2
-                binding.textNota.setText("Nota: $nota")
-            }else{
+            } else {
                 nota -= 2
-                binding.textNota.setText("Nota: $nota")
             }
         }
-
-
 
     }
 }

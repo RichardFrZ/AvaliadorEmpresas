@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ResultActivity">
+    android:gravity="center"
+    tools:context=".SplashScreenActivity">
 
     <TextView
-        android:id="@+id/text_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Calculando a nota"
         android:gravity="center"
-        android:text="Nota: "
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
+        android:textSize="30sp"/>
 
 </LinearLayout>

@@ -209,14 +209,4 @@
         android:text="Calcular"/>
 
 
-    <TextView
-        android:id="@+id/text_nota"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Nota: -10"
-        android:textSize="30sp"
-        android:textStyle="bold" />
-
-
 </LinearLayout>
