@@ -1,9 +1,8 @@
-package com.example.avaliadordeempresas
+package com.example.avaliadordeempresas.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.LinearLayout
 import com.example.avaliadordeempresas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonResult.setOnClickListener {
-            val i = Intent(this, SplashScreenActivity::class.java)
+            val i = Intent(this, ResultActivity::class.java)
             i.putExtra("nota", nota)
             startActivity(i)
         }

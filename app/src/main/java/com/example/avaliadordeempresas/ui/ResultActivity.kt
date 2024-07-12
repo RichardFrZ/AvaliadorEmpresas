@@ -1,8 +1,7 @@
-package com.example.avaliadordeempresas
+package com.example.avaliadordeempresas.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.result.ActivityResult
 import com.example.avaliadordeempresas.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
@@ -17,7 +16,7 @@ class ResultActivity : AppCompatActivity() {
 
         val nota = i.getIntExtra("nota", 0)
 
-        val resultado = "Nota final da empresa: \n" +
+        val resultado = "Nota da empresa: \n" +
                 "${nota}"
 
         binding.textResult.setText(resultado)
