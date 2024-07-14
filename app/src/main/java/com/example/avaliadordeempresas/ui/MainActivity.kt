@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: QuestionListAdapter
     private lateinit var dbHelper: DBHelper
 
+
     private var nota = -10
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,8 @@ class MainActivity : AppCompatActivity() {
             i.putExtra("nota", nota)
             startActivity(i)
         }
+
+
         /*
                 binding.checkLucro20.setOnClickListener {
                     if (binding.checkLucro20.isChecked) {
@@ -122,7 +125,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun placeAdapter() {
-        adapter = QuestionListAdapter(questionList)
+        val itemCheckListener: (Boolean, MutableList<QuestionModel>) -> Unit = { isChecked, data ->
+            if(isChecked){
+                nota += 2
+            }else{
+                nota -= 2
+            }
+        }
+        adapter = QuestionListAdapter(questionList, itemCheckListener)
         binding.recyclerViewQuestions.adapter = adapter
     }
 }

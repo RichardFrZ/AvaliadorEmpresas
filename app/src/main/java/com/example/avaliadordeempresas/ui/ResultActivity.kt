@@ -1,5 +1,6 @@
 package com.example.avaliadordeempresas.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.avaliadordeempresas.databinding.ActivityResultBinding
@@ -7,6 +8,7 @@ import com.example.avaliadordeempresas.databinding.ActivityResultBinding
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityResultBinding.inflate(layoutInflater)
@@ -21,5 +23,8 @@ class ResultActivity : AppCompatActivity() {
 
         binding.textResult.setText(resultado)
 
+        binding.buttonVoltar.setOnClickListener {
+            finish()
+        }
     }
 }
