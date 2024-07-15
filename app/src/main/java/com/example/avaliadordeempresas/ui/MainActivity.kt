@@ -3,7 +3,11 @@ package com.example.avaliadordeempresas.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.avaliadordeempresas.R
 import com.example.avaliadordeempresas.adapter.QuestionListAdapter
 import com.example.avaliadordeempresas.database.DBHelper
 import com.example.avaliadordeempresas.databinding.ActivityMainBinding
@@ -15,6 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var questionList: List<QuestionModel>
     private lateinit var adapter: QuestionListAdapter
     private lateinit var dbHelper: DBHelper
+    private lateinit var result: ActivityResultLauncher<Intent>
 
 
     private var nota = -10
@@ -35,88 +40,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        binding.buttonAddQuestion.setOnClickListener {
+            result.launch(Intent(applicationContext, NewQuestionActivity::class.java))
+        }
 
-        /*
-                binding.checkLucro20.setOnClickListener {
-                    if (binding.checkLucro20.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkLucro40.setOnClickListener {
-                    if (binding.checkLucro40.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkPrejuizo.setOnClickListener {
-                    if (binding.checkPrejuizo.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkCrescimentoLucro.setOnClickListener {
-                    if (binding.checkCrescimentoLucro.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkCrescimentoReceita.setOnClickListener {
-                    if (binding.checkCrescimentoReceita.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkROEAcima.setOnClickListener {
-                    if (binding.checkROEAcima.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkLucroAcima.setOnClickListener {
-                    if (binding.checkLucroAcima.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkLiquidezAcima.setOnClickListener {
-                    if (binding.checkLiquidezAcima.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkDividendos.setOnClickListener {
-                    if (binding.checkDividendos.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-
-                binding.checkDividaMenor.setOnClickListener {
-                    if (binding.checkDividaMenor.isChecked) {
-                        nota += 2
-                    } else {
-                        nota -= 2
-                    }
-                }
-        */
+        result = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            if(it.data!=null && it.resultCode == 1){
+                loadList()
+            }else if(it.data!=null && it.resultCode == 0){
+                Toast.makeText(applicationContext,
+                    "Operação Cancelada", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun loadList() {
@@ -132,7 +67,12 @@ class MainActivity : AppCompatActivity() {
                 nota -= 2
             }
         }
-        adapter = QuestionListAdapter(questionList, itemCheckListener)
+        val questionOnClickListener: (QuestionModel) -> Unit = { question ->
+            val intent = Intent(applicationContext, QuestionDetailActivity::class.java)
+            intent.putExtra("id", question.id)
+            result.launch(intent)
+        }
+        adapter = QuestionListAdapter(questionList, itemCheckListener, questionOnClickListener)
         binding.recyclerViewQuestions.adapter = adapter
     }
 }

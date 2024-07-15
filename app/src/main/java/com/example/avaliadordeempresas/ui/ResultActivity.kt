@@ -16,7 +16,7 @@ class ResultActivity : AppCompatActivity() {
 
         val i = intent
 
-        val nota = i.getIntExtra("nota", 0)
+        var nota = i.getIntExtra("nota", 0)
 
         val resultado = "Nota da empresa: \n" +
                 "${nota}"
@@ -24,6 +24,7 @@ class ResultActivity : AppCompatActivity() {
         binding.textResult.setText(resultado)
 
         binding.buttonVoltar.setOnClickListener {
+            nota = 0
             finish()
         }
     }
